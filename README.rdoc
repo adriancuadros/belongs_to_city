@@ -5,4 +5,10 @@ Rails gem that eases the relation between different rails models and a basic cit
 gem install basic_location --source http://gems.github.com
 
 == Usage
-This will be published very shortly
+To start you need to generate the tables for basic location which are Country, State and city
+
+You can do this with the following command
+
+script/generate basic_location
+
+So far this is all I have but during this week i'll be including the city, state and country models needed for the plugin to work.
