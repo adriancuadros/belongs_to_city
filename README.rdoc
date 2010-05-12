@@ -1,0 +1,8 @@
+= Basic Location
+Rails gem that eases the relation between different rails models and a basic city -> state -> country database
+
+== Install
+gem install basic_location --source http://gems.github.com
+
+== Usage
+This will be published very shortly
