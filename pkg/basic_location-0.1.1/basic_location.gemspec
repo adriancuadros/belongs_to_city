@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = %q{Generate basic location information for any given model}
   s.email = %q{adrian@innku.com}
   s.extra_rdoc_files = ["README.rdoc", "lib/basic_location.rb"]
-  s.files = ["README.rdoc", "Rakefile", "lib/basic_location.rb", "Manifest", "basic_location.gemspec"]
+  s.files = ["Manifest", "README.rdoc", "Rakefile", "lib/basic_location.rb", "basic_location.gemspec"]
   s.homepage = %q{http://github.com/adriancuadros/basic_location}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Basic_location", "--main", "README.rdoc"]
   s.require_paths = ["lib"]

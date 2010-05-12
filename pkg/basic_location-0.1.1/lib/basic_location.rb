@@ -1,5 +1,5 @@
 module BasicLocation
-  self.included(base)
+  def self.included(base)
     base.extend ClassMethods
   end
   
@@ -30,6 +30,6 @@ module BasicLocation
   
 end
 
-class ActiveRecod::Base
+class ActiveRecord::Base
   include BasicLocation
 end
