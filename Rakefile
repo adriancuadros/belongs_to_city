@@ -1,14 +1,17 @@
 require 'rubygems'
 require 'rake'
-require 'echoe'
 
-Echoe.new('basic_location', '0.1.1') do |p|
-  p.description     = "Generate basic location information for any given model"
-  p.url             = "http://github.com/adriancuadros/basic_location"
-  p.author          = "Adrian Cuadros"
-  p.email           = "adrian@innku.com"
-  p.ignore_pattern  = ["tmp/*", "script/*"]
-  p.development_dependencies = []
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "belongs_to_city"
+    gemspec.summary = "Eases integrating city autocomplete feature to rails application"
+    gemspec.description = "Creates the basic structure to enable autocomplete search for city-able models in rails 2.3.x"
+    gemspec.email = "adrian@innku.com"
+    gemspec.homepage = "http://github.com/adriancuadros/belongs_to_city"
+    gemspec.authors = ["Adrian Cuadros"]
+  end
+  Jeweler::GemcutterTasks.new
+rescue LoadError
+  puts "Jeweler not available. Install it with: gem install jeweler"
 end
-
-Dir["#{File.dirname(__FILE__)}/tasks/*.rake"].sort.each{|ext| load ext }

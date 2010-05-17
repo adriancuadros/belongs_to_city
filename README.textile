@@ -1,0 +1,21 @@
+h1. Belongs to city
+
+p. Rails gem that eases the popular city autocomplete on Rails applications. It's initially built to work with JQuery ant its popular autocomplete plugin but it has the flexibility to work with any ajas scripting you need.
+
+***************************************************************************
+
+h2. Install
+
+bc. gem install belongs_to_city
+
+***************************************************************************
+
+h2. Usage
+
+To start you need to generate the tables for basic location which are Country, State and city
+
+You can do this with the following command
+
+script/generate belongs_to_city
+
+***************************************************************************
