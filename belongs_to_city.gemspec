@@ -22,57 +22,13 @@ Gem::Specification.new do |s|
      "VERSION",
      "belongs_to_city.gemspec",
      "generators/belongs_to_city/belongs_to_city_generator.rb",
+     "generators/belongs_to_city/templates/controllers/cities_controller.rb",
      "generators/belongs_to_city/templates/migrate/create_belongs_to_city_tables.rb",
      "generators/belongs_to_city/templates/models/city.rb",
      "generators/belongs_to_city/templates/models/country.rb",
      "generators/belongs_to_city/templates/models/state.rb",
-     "lib/belongs_to_city.rb",
-     "poc/test/README",
-     "poc/test/Rakefile",
-     "poc/test/app/controllers/application_controller.rb",
-     "poc/test/app/helpers/application_helper.rb",
-     "poc/test/config/boot.rb",
-     "poc/test/config/database.yml",
-     "poc/test/config/environment.rb",
-     "poc/test/config/environments/development.rb",
-     "poc/test/config/environments/production.rb",
-     "poc/test/config/environments/test.rb",
-     "poc/test/config/initializers/backtrace_silencers.rb",
-     "poc/test/config/initializers/inflections.rb",
-     "poc/test/config/initializers/mime_types.rb",
-     "poc/test/config/initializers/new_rails_defaults.rb",
-     "poc/test/config/initializers/session_store.rb",
-     "poc/test/config/locales/en.yml",
-     "poc/test/config/routes.rb",
-     "poc/test/db/seeds.rb",
-     "poc/test/log/development.log",
-     "poc/test/log/production.log",
-     "poc/test/log/server.log",
-     "poc/test/log/test.log",
-     "poc/test/public/404.html",
-     "poc/test/public/422.html",
-     "poc/test/public/500.html",
-     "poc/test/public/favicon.ico",
-     "poc/test/public/images/rails.png",
-     "poc/test/public/index.html",
-     "poc/test/public/javascripts/application.js",
-     "poc/test/public/javascripts/controls.js",
-     "poc/test/public/javascripts/dragdrop.js",
-     "poc/test/public/javascripts/effects.js",
-     "poc/test/public/javascripts/prototype.js",
-     "poc/test/public/robots.txt",
-     "poc/test/script/about",
-     "poc/test/script/console",
-     "poc/test/script/dbconsole",
-     "poc/test/script/destroy",
-     "poc/test/script/generate",
-     "poc/test/script/performance/benchmarker",
-     "poc/test/script/performance/profiler",
-     "poc/test/script/plugin",
-     "poc/test/script/runner",
-     "poc/test/script/server",
-     "poc/test/test/performance/browsing_test.rb",
-     "poc/test/test/test_helper.rb"
+     "generators/belongs_to_city/templates/views/index.js.erb",
+     "lib/belongs_to_city.rb"
   ]
   s.homepage = %q{http://github.com/adriancuadros/belongs_to_city}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -85,9 +41,15 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+      s.add_development_dependency(%q<searchlogic>, [">= 0"])
     else
+      s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+      s.add_dependency(%q<searchlogic>, [">= 0"])
     end
   else
+    s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
+    s.add_dependency(%q<searchlogic>, [">= 0"])
   end
 end
 
