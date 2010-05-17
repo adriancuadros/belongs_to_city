@@ -17,8 +17,16 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".gitignore",
+     "README.textile",
      "Rakefile",
-     "VERSION"
+     "VERSION",
+     "belongs_to_city.gemspec",
+     "generators/belongs_to_city/belongs_to_city_generator.rb",
+     "generators/belongs_to_city/templates/migrate/create_belongs_to_city_tables.rb",
+     "generators/belongs_to_city/templates/models/city.rb",
+     "generators/belongs_to_city/templates/models/country.rb",
+     "generators/belongs_to_city/templates/models/state.rb",
+     "lib/belongs_to_city.rb"
   ]
   s.homepage = %q{http://github.com/adriancuadros/belongs_to_city}
   s.rdoc_options = ["--charset=UTF-8"]
