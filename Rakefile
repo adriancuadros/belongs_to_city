@@ -10,6 +10,8 @@ begin
     gemspec.email = "adrian@innku.com"
     gemspec.homepage = "http://github.com/adriancuadros/belongs_to_city"
     gemspec.authors = ["Adrian Cuadros"]
+    gemspec.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gemspec.add_development_dependency "searchlogic"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
