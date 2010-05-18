@@ -27,6 +27,7 @@ class BelongsToCityGenerator < Rails::Generator::Base
           m.file      "countries.csv", "db/csv/countries.csv"
           m.file      "states.csv",    "db/csv/states.csv"
           m.file      "cities.csv",     "db/csv/cites.csv"
+          m.file      'belongs_to_city_tasks.rake', 'lib/tasks/belongs_to_city_tasks.rake'
         end
       end
   end
