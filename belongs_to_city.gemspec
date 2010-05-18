@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adrian Cuadros"]
-  s.date = %q{2010-05-17}
+  s.date = %q{2010-05-18}
   s.description = %q{Creates the basic structure to enable autocomplete search for city-able models in rails 2.3.x}
   s.email = %q{adrian@innku.com}
   s.extra_rdoc_files = [
@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "belongs_to_city.gemspec",
+     "generators/belongs_to_city/USAGE",
      "generators/belongs_to_city/belongs_to_city_generator.rb",
      "generators/belongs_to_city/templates/controllers/cities_controller.rb",
      "generators/belongs_to_city/templates/migrate/create_belongs_to_city_tables.rb",

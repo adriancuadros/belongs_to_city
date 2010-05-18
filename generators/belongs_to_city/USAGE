@@ -1,0 +1,29 @@
+Description:
+	This command will generate all the tables, models, controllers, views 
+	and seeds needed to get started with the city autocomplete functionality.
+
+Usage:
+	The default option for the generate command will create 
+	all the files including the seeds. You can optionally 
+	give the arguments of the things  you need for your application.
+	
+	- tables 	: Will generate the migration files
+	- models 	: Will generate the models
+	- controller	: Will generate the controller and js response view
+	- seed 		: Will generate the script to populate the location info.
+
+Examples:
+	script/generate belongs_to_city
+	
+		Will generate migration, models, controller, view and seed files
+	
+	script/generate belongs_to_city models controller
+		
+		Will generate models, controller and view
+	
+	script/generate migration model seed
+		Will generate migration, models and seed
+		This option is recommended when you don't
+		want to use the jquery autocomplete plugin
+	
+	
