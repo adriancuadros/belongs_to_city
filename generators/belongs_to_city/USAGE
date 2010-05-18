@@ -10,8 +10,18 @@ Usage:
 	- tables 	: Will generate the migration files
 	- models 	: Will generate the models
 	- controller	: Will generate the controller and js response view
-	- seed 		: Will generate the script to populate the location info.
-
+	
+	Also optionally you can include the rake task to seed your database
+	
+	--include-seeds
+	
+	This option will include the following rake task
+	
+	rake db:seed:cities
+	
+	Also it will generate 3 csv files (country, state, city) that you can populate
+	to seed your database.
+	
 Examples:
 	script/generate belongs_to_city
 	

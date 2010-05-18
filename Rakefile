@@ -12,6 +12,7 @@ begin
     gemspec.authors = ["Adrian Cuadros"]
     gemspec.add_development_dependency "thoughtbot-shoulda", ">= 0"
     gemspec.add_development_dependency "searchlogic"
+    gemspec.add_development_dependency "fastercsv"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
