@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{belongs_to_city}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adrian Cuadros"]
@@ -23,11 +23,13 @@ Gem::Specification.new do |s|
      "belongs_to_city.gemspec",
      "generators/belongs_to_city/USAGE",
      "generators/belongs_to_city/belongs_to_city_generator.rb",
+     "generators/belongs_to_city/templates/cities.csv",
      "generators/belongs_to_city/templates/controllers/cities_controller.rb",
-     "generators/belongs_to_city/templates/migrate/create_belongs_to_city_tables.rb",
+     "generators/belongs_to_city/templates/countries.csv",
      "generators/belongs_to_city/templates/models/city.rb",
      "generators/belongs_to_city/templates/models/country.rb",
      "generators/belongs_to_city/templates/models/state.rb",
+     "generators/belongs_to_city/templates/states.csv",
      "generators/belongs_to_city/templates/views/index.js.erb",
      "lib/belongs_to_city.rb"
   ]

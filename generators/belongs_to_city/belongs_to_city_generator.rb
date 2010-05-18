@@ -26,7 +26,7 @@ class BelongsToCityGenerator < Rails::Generator::Base
           m.directory "db/csv"
           m.file      "countries.csv", "db/csv/countries.csv"
           m.file      "states.csv",    "db/csv/states.csv"
-          m.file      "cites.csv",     "db/csv/cites.csv"
+          m.file      "cities.csv",     "db/csv/cites.csv"
         end
       end
   end
