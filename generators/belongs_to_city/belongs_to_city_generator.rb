@@ -21,6 +21,13 @@ class BelongsToCityGenerator < Rails::Generator::Base
           m.directory "app/views/cities"
           m.file      "views/index.js.erb", "app/views/cities/index.js.erb"
         end
+        if options[:include_seeds]
+          puts 'yes'
+          m.directory "db/csv"
+          m.file      "countries.csv", "db/csv/countries.csv"
+          m.file      "states.csv",    "db/csv/states.csv"
+          m.file      "cites.csv",     "db/csv/cites.csv"
+        end
       end
   end
   
@@ -30,6 +37,12 @@ class BelongsToCityGenerator < Rails::Generator::Base
     <<-EOS
       "#{$0}"
     EOS
+  end
+  
+  def add_options!(opt)
+    opt.separator ''
+    opt.separator 'Options:'
+    opt.on('--include-seeds', "Include seed template files on db/csv") { |v| options[:include_seeds] = true }
   end
   
 end
