@@ -5,18 +5,20 @@
 
 Gem::Specification.new do |s|
   s.name = %q{belongs_to_city}
-  s.version = "0.4.0"
+  s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adrian Cuadros"]
   s.date = %q{2010-05-21}
-  s.description = %q{Creates the basic structure to enable autocomplete search for city-able models in rails 2.3.x}
+  s.description = %q{Creates the basic structure to enable integration with any model and eases autocomplete search}
   s.email = %q{adrian@innku.com}
   s.extra_rdoc_files = [
-    "README.textile"
+    "LICENSE",
+     "README.textile"
   ]
   s.files = [
     ".gitignore",
+     "LICENSE",
      "README.textile",
      "Rakefile",
      "VERSION",
@@ -40,7 +42,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
-  s.summary = %q{Eases integrating city autocomplete feature to rails application}
+  s.summary = %q{Eases integrating a city database structure with any model in rails}
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
