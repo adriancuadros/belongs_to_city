@@ -7,7 +7,7 @@ module BelongsToCity
   module ClassMethods
     
     def belongs_to_city(*args)
-      city_attribute = args.first[:as].to_s
+      city_attribute = args.empty? ? :city : args.first[:as].to_s
       city_collector = city_attribute.to_s.pluralize.to_sym
       attr_accessor city_collector
       belongs_to    city_attribute, :class_name => "City", :foreign_key => 'city_id'

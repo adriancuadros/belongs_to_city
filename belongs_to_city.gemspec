@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{belongs_to_city}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adrian Cuadros"]
-  s.date = %q{2010-05-20}
+  s.date = %q{2010-05-21}
   s.description = %q{Creates the basic structure to enable autocomplete search for city-able models in rails 2.3.x}
   s.email = %q{adrian@innku.com}
   s.extra_rdoc_files = [
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
      "generators/belongs_to_city/templates/cities.csv",
      "generators/belongs_to_city/templates/controllers/cities_controller.rb",
      "generators/belongs_to_city/templates/countries.csv",
+     "generators/belongs_to_city/templates/migrate/create_belongs_to_city_tables.rb",
      "generators/belongs_to_city/templates/models/city.rb",
      "generators/belongs_to_city/templates/models/country.rb",
      "generators/belongs_to_city/templates/models/state.rb",

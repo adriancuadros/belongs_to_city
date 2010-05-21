@@ -19,7 +19,7 @@ namespace :db do
       
       puts 'Creating Cities'
       FasterCSV.foreach('db/csv/cities.csv', :headers => :first_row) do |city|
-        City.create(:state_id => city['state_id'], :name => city['name'], :abbr => city['city_name'])
+        City.create(:state_id => city['state_id'], :name => city['name'], :city_name => city['city_name'])
       end
       puts 'Done'
     end
