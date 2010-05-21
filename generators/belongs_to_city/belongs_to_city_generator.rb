@@ -1,3 +1,5 @@
+require File.expand_path(File.dirname(__FILE__) + "/lib/insert_routes.rb")
+
 class BelongsToCityGenerator < Rails::Generator::Base
   attr_accessor :models, :controller, :tables, :seed
   
@@ -19,6 +21,7 @@ class BelongsToCityGenerator < Rails::Generator::Base
         end
         if @args.empty? or @args.include?('controller') 
           m.template "controllers/cities_controller.rb", "app/controllers/cities_controller.rb"
+          m.route_resource(:cities)
         end
         
         if options[:jq_autocomplete]
