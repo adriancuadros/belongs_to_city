@@ -12,7 +12,7 @@ bc. gem install belongs_to_city
 
 ***************************************************************************
 
-h2. Usage
+h2. Generate the city Structure
 
 p. First of all you need to generate the structure that includes the City, State and Country in your application.
 
@@ -56,5 +56,64 @@ p. *--include-seed* will create a rake task to seed your City based database usi
 |1|Monterey|Monterrey|
 |2|Guadalajara|Guadalajara|
 
+p. All that matters is that the header is present in the csv files, the order can change if you wish.
+
+p. *--jq-autocomplete* This will generate the view ready to be used in the jq-autocomplete plugin and print out the code to be pasted in the application.js file.
+
+p. The following command generates everything including the jq view file:
+
+bc. script/generate belongs_to_city --include-seed --jq-autocomplete
 
 ***************************************************************************
+
+h2. Use the City structure in your models
+
+p. To use the city structure in your models, *include an integer city_id* column in the model you want to use it and paste the following code into the model.
+
+bc. belongs_to_city
+
+p. This gives you the attribute *city_name*. Each time you assign a value to this attribute, the gem will look for a city that matches the string in a 'city, state' format. 
+
+p. For example, with the given data on the csv example tables, the city monterrey would be assigned to a model given the following strings:
+
+ * Monterrey, Nuevo Leon
+ * Monterrey, NL
+ * Monterrey
+ * Monte
+
+p. After the assignation, you would get a city model instance when you called _model.city_
+
+h3. Use the City in many attributes
+
+p. If you have a model that needs more than one relation to a city, you could also pull it off like the following example.
+
+p. Say you have a *Travel* model that has an *origin* and a *destination*, both related to a city. First of all you need to add an *origin_id* and a *destination_id* to the Model and then use this code into the model.
+
+bc. belongs_to_city 		:as => :origin
+
+bc. belongs_to_city 		:as => :destination
+
+p. The code works the same way as previously stated, but instead of a _city_name_ attribute you would have the *origin_name* and *destination_name* attributes.
+
+h3. Validate the presence of the City
+
+p. If your using the autocomplete to find the city, you can validate that you have a city in the following way:
+
+bc. belongs_to_city			:as => :origin, :required => true
+
+p. This gives you the ability to handle errors more appropriately like in the following way.
+
+bc. belongs_to_city			:as => :origin, :required => true, :messages => {:on_many_matches => 'We found many cities with your request, please be more specific!, :on_no_matches => 'We didnt find any city with the data you provided'}
+
+
+***************************************************************************
+
+h2. TODO
+
+* Generators for relation migration in the database
+* Tests
+
+***************************************************************************
+h2. Copyright
+
+Copyright (c) 2010 Innku. See LICENSE for details.
