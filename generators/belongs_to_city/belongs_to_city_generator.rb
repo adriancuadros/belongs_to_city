@@ -36,6 +36,9 @@ class BelongsToCityGenerator < Rails::Generator::Base
           m.file      "cities.csv",     "db/csv/cities.csv"
           m.file      'belongs_to_city_tasks.rake', 'lib/tasks/belongs_to_city_tasks.rake'
         end
+        
+        include_in_environment
+        
       end
   end
   
@@ -45,6 +48,13 @@ class BelongsToCityGenerator < Rails::Generator::Base
     <<-EOS
       "#{$0}"
     EOS
+  end
+  
+  def include_in_environment
+    puts "****IMPORTANT****"
+    puts "Please include the following lines in your config/environment.rb file"
+    puts "      config.gem 'searchlogic'"
+    puts "      config.gem 'belongs_to_city'"
   end
   
   def add_options!(opt)

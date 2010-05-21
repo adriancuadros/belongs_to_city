@@ -9,9 +9,9 @@ Usage:
 	
 	- tables 	: Will generate the migration files
 	- models 	: Will generate the models
-	- controller	: Will generate the controller and js response view
+	- controller	: Will generate the controller
 	
-	Also optionally you can include the rake task to seed your database
+	Optionally you can include the rake task to seed your database
 	
 	--include-seeds
 	
@@ -19,8 +19,17 @@ Usage:
 	
 	rake db:seed:cities
 	
-	Also it will generate 3 csv files (country, state, city) that you can populate
+	It will generate 3 csv files (country, state, city) that you can populate
 	to seed your database.
+	
+	Also you con optionally include the option that eases jq autocomplete
+	
+	--jq-autocomplete
+	
+	With these option a view is generated with the standard used for the autocomplete
+	
+	If you would like to use any other plugin other than the specified, it is 
+	recommended you format the data according to your needs.
 	
 Examples:
 	script/generate belongs_to_city

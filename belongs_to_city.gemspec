@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "belongs_to_city.gemspec",
      "generators/belongs_to_city/USAGE",
      "generators/belongs_to_city/belongs_to_city_generator.rb",
+     "generators/belongs_to_city/lib/insert_routes.rb",
      "generators/belongs_to_city/templates/belongs_to_city_tasks.rake",
      "generators/belongs_to_city/templates/cities.csv",
      "generators/belongs_to_city/templates/controllers/cities_controller.rb",
