@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adrian Cuadros"]
-  s.date = %q{2010-05-18}
+  s.date = %q{2010-05-20}
   s.description = %q{Creates the basic structure to enable autocomplete search for city-able models in rails 2.3.x}
   s.email = %q{adrian@innku.com}
   s.extra_rdoc_files = [
@@ -47,13 +47,16 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_development_dependency(%q<searchlogic>, [">= 0"])
+      s.add_development_dependency(%q<fastercsv>, [">= 0"])
     else
       s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
       s.add_dependency(%q<searchlogic>, [">= 0"])
+      s.add_dependency(%q<fastercsv>, [">= 0"])
     end
   else
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
     s.add_dependency(%q<searchlogic>, [">= 0"])
+    s.add_dependency(%q<fastercsv>, [">= 0"])
   end
 end
 

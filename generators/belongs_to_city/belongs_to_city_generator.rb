@@ -8,6 +8,7 @@ class BelongsToCityGenerator < Rails::Generator::Base
   
   def manifest
       record do |m|
+        
         if @args.empty? or @args.include?('tables')
           m.migration_template "migrate/create_belongs_to_city_tables.rb", "db/migrate", :migration_file_name => "create_belongs_to_city_tables"
         end
@@ -18,11 +19,14 @@ class BelongsToCityGenerator < Rails::Generator::Base
         end
         if @args.empty? or @args.include?('controller') 
           m.template "controllers/cities_controller.rb", "app/controllers/cities_controller.rb"
+        end
+        
+        if options[:jq_autocomplete]
           m.directory "app/views/cities"
           m.file      "views/index.js.erb", "app/views/cities/index.js.erb"
         end
+        
         if options[:include_seeds]
-          puts 'yes'
           m.directory "db/csv"
           m.file      "countries.csv", "db/csv/countries.csv"
           m.file      "states.csv",    "db/csv/states.csv"
@@ -44,6 +48,7 @@ class BelongsToCityGenerator < Rails::Generator::Base
     opt.separator ''
     opt.separator 'Options:'
     opt.on('--include-seeds', "Include seed template files on db/csv") { |v| options[:include_seeds] = true }
+    opt.on('--jq-autocomplete', "Include jquery autocomplete prepared view") { |v| options[:jq_autocomplete] = true }
   end
   
 end

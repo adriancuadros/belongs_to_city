@@ -1,3 +1,3 @@
-class Country < ActiveRecord::Base
+class State < ActiveRecord::Base
   belongs_to      :country
 end
