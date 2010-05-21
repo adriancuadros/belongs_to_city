@@ -21,7 +21,7 @@ class BelongsToCityGenerator < Rails::Generator::Base
         end
         if @args.empty? or @args.include?('controller') 
           m.template "controllers/cities_controller.rb", "app/controllers/cities_controller.rb"
-          m.route_resource(:cities)
+          m.route_resources(:cities)
         end
         
         if options[:jq_autocomplete]
