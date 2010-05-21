@@ -49,12 +49,17 @@ p. *--include-seed* will create a rake task to seed your City based database usi
 |*country_id*|*name*|*abbr*|*short*|*short2*|
 |1|Nuevo Leon|N.L.|NL|NLE|
 |1|Jalisco|Jal.|JA|JAL|
+|2|Texal|TX|||
+|2|Florida|FL|||
 
 *cities.csv*
 
 |*state_id*|*name*|*city_name*|
 |1|Monterey|Monterrey|
 |2|Guadalajara|Guadalajara|
+|3|Houston||
+|4|Miami||
+
 
 p. All that matters is that the header is present in the csv files, the order can change if you wish.
 

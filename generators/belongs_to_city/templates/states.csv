@@ -1,2 +1,5 @@
 country_id,name,abbr,short,short2
-1,Nuevo Leon,NLE,NL,Nle.
+1,Nuevo Leon,Nle.,NLE,NL
+1,Jalisco,Jal.,JAL,JA
+2,Texas,TX,,
+2,Florida,FL,,
