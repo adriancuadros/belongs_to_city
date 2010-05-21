@@ -6,12 +6,13 @@ module BelongsToCity
   
   module ClassMethods
     
-    def belongs_to_city(*args)
-      city_attribute = args.empty? ? :city : args.first[:as]
+    def belongs_to_city(args = {})
+      city_attribute = args[:as].nil? ? :city : args[:as]
       city_attribute_helper = (city_attribute.to_s + '_name').to_sym
       city_collector = city_attribute.to_s.pluralize.to_sym
+      
       attr_accessor city_collector
-      belongs_to    city_attribute, :class_name => "City", :foreign_key => 'city_id'
+      belongs_to    city_attribute, :class_name => "City"
       
       #Getter and Setter Methods
       define_method "#{city_attribute}_name" do
@@ -37,9 +38,10 @@ module BelongsToCity
         end
         too_many_cities_message ||="Too many cities found in your request, please be more specific"
         no_cities_message ||= "We couldn't find any city in your request"
-        validate do 
-          errors.add(city_attribute_helper, too_many_cities_message) if read_attribute(city_collector).size > 1
-          errors.add(city_attribute_helper, no_cities_message) if read_attribute(city_collector).size == 0
+        validate do |record|
+          cities = record.read_attribute(city_collector)
+          record.errors.add(city_attribute_helper, too_many_cities_message) if cities.size > 1 rescue nil
+          record.errors.add(city_attribute_helper, no_cities_message) if (cities.nil? or cities.size == 0)
         end
       end
       
