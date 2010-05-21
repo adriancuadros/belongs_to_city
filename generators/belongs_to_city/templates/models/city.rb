@@ -6,6 +6,7 @@ class City < ActiveRecord::Base
       city_name, state_name = full_name.split(",")
       @cities = City.name_is(city_name.strip)
       @cities = @cities.state_name_or_state_abbr_like(state_name.strip) if state_name
+      @cities
     else
       []
     end
