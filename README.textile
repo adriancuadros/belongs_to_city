@@ -111,6 +111,7 @@ bc. belongs_to_city			:as => :origin, :required => true, :messages => {:on_many_
 h2. TODO
 
 * Generators for relation migration in the database
+* Puts Jquery code to paste in application.js
 * Tests
 
 ***************************************************************************
