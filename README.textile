@@ -1,6 +1,8 @@
 h1. Belongs to city
 
-p. Rails gem that eases the popular city autocomplete on Rails applications. It's initially built to work with JQuery ant its popular autocomplete plugin but it has the flexibility to work with any ajas scripting you need.
+p. Rails gem that eases the relation between your existing models and a City -> State -> Country type of database. 
+
+p. It is thought primarily to be used in a city autocomplete feature and includes the functionality to get started with the jquery autocomplete plugin.
 
 ***************************************************************************
 
@@ -12,10 +14,44 @@ bc. gem install belongs_to_city
 
 h2. Usage
 
-To start you need to generate the tables for basic location which are Country, State and city
+p. First of all you need to generate the structure that includes the City, State and Country in your application.
 
-You can do this with the following command
+p. You can do this with the following command
 
-script/generate belongs_to_city
+bc. script/generate belongs_to_city
+
+p. This will generate 3 basic things. A migration file that creates the previously mentioned tables, the 3 models and the cities controller (Since you will be accesing this for the autocomplete functionality). Also it will generate the routes to access this last controller.
+
+p. Also You can optionally give the arguments of the things you need for your application. with the following options
+
+	* tables - Generates the migration
+	* models - Generates the models
+	* controller - Generates the controller and the resource route
+	
+p. So the previous line of code is *equivalent* to: 
+
+bc. script/generate belongs_to_city tables models controller
+
+p. *OPTIONS*
+
+p. Optionally you can provide the following options that will further help you to generate the database and start on the autocomplete feature
+
+p. *--include-seed* will create a rake task to seed your City based database using .csv files. For this to work you need to have your csv files stored in db/csv folder and the files should have the following format.
+
+p. *countries.csv*
+|_. name|
+|Mexico|
+|USA|
+
+p. *states.csv*
+|_. country_id|_. name|_. abbr|_. short|_. short2|
+|1|Nuevo Leon|N.L.|NL|NLE|
+|1|Jalisco|Jal.|JA|JAL|
+
+p. *cities.csv*
+|_. state_id|_. name|_. city_name|
+|1|Monterey|Monterrey|
+|2|Guadalajara|Guadalajara|
+
 
 ***************************************************************************
