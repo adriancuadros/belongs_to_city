@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gemspec|
     gemspec.name = "belongs_to_city"
     gemspec.summary = "Eases integrating a city database structure with any model in rails"
-    gemspec.description = "Creates the basic structure to enable City database integration with any model and eases autocomplete search"
+    gemspec.description = "Creates the basic structure to enable City structure integration with any model and eases autocomplete search"
     gemspec.email = "adrian@innku.com"
     gemspec.homepage = "http://github.com/adriancuadros/belongs_to_city"
     gemspec.authors = ["Adrian Cuadros"]
