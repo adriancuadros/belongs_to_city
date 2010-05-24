@@ -73,6 +73,12 @@ bc. script/generate belongs_to_city --include-seed --jq-autocomplete
 
 h2. Use the City structure in your models
 
+h3. Important
+
+p. For the time being, if youd like to use other association methods including the city in your models. It is required that you include the following line of code
+
+bc. belongs_to   :city, :class_name => 'City'
+
 p. To use the city structure in your models, *include an integer city_id* column in the model you want to use it and paste the following code into the model.
 
 bc. belongs_to_city
