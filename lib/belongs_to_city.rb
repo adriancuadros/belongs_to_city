@@ -16,8 +16,9 @@ module BelongsToCity
       
       #Getter and Setter Methods
       define_method "#{city_attribute}_name" do
+        city = send(city_attribute)
         return read_attribute("#{city_attribute}_name") if read_attribute("#{city_attribute}_name")
-        return "#{send(city_attribute).name}, #{send(city_attribute).state.short2}" if read_attribute(city_attribute)
+        return "#{city.name}, #{city.state.short2}" if city
       end
 
       define_method "#{city_attribute}_name=" do |city_name|
@@ -40,8 +41,9 @@ module BelongsToCity
         no_cities_message ||= "We couldn't find any city in your request"
         validate do |record|
           cities = record.read_attribute(city_collector)
-          record.errors.add(city_attribute_helper, too_many_cities_message) if cities.size > 1 rescue nil
-          record.errors.add(city_attribute_helper, no_cities_message) if (cities.nil? or cities.size == 0)
+          city = record.read_attribute(city_attribute)
+          record.errors.add(city_attribute_helper, too_many_cities_message) if (city.nil? and cities.size > 1 rescue nil)
+          record.errors.add(city_attribute_helper, no_cities_message) if (city.nil? and cities.nil? or cities.size == 0)
         end
       end
       
