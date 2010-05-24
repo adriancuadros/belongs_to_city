@@ -11,8 +11,8 @@ module BelongsToCity
       city_attribute_helper = (city_attribute.to_s + '_name').to_sym
       city_collector = city_attribute.to_s.pluralize.to_sym
       
-      attr_accessor city_collector
-      belongs_to    city_attribute, :class_name => "City"
+      send('attr_accessor' city_collector)
+      send('belongs_to', city_attribute, :class_name => "City")
       
       #Getter and Setter Methods
       define_method "#{city_attribute}_name" do
