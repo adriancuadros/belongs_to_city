@@ -42,8 +42,10 @@ module BelongsToCity
         validate do |record|
           cities = record.read_attribute(city_collector)
           city = record.read_attribute(city_attribute)
-          record.errors.add(city_attribute_helper, too_many_cities_message) if (city.nil? and cities.size > 1 rescue nil)
-          record.errors.add(city_attribute_helper, no_cities_message) if (city.nil? and cities.nil? or cities.size == 0)
+          if city_collector
+            record.errors.add(city_attribute_helper, too_many_cities_message) if (cities.size > 1 rescue nil)
+            record.errors.add(city_attribute_helper, no_cities_message) if (cities.nil? or cities.size == 0)
+          end
         end
       end
       

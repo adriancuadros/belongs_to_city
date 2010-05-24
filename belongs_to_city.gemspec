@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adrian Cuadros"]
-  s.date = %q{2010-05-21}
+  s.date = %q{2010-05-24}
   s.description = %q{Creates the basic structure to enable City structure integration with any model and eases autocomplete search}
   s.email = %q{adrian@innku.com}
   s.extra_rdoc_files = [
