@@ -1,8 +1,8 @@
 h1. Belongs to city
 
-p. Rails gem that eases the relation between your existing models and a City -> State -> Country type of database. 
+p. This gem is discontinued. A newer, better gem on http://github.com/adriancuadros/metropoli
 
-p. It is thought primarily to be used in a city autocomplete feature and includes the functionality to get started with the jquery autocomplete plugin.
+p. It has extended objectives and a totally different aproach. It was developed for specifically for rails 3 so you should probably check it out.
 
 ***************************************************************************
 
